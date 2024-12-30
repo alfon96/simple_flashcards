@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000" # Map the container's port 3000 to your host's port 3000
+      - "9229:9229" # Map the container's port 3000 to your host's port 3000
+    volumes:
+      - .:/app # Bind mount your local directory to the container's /app directory
+      - /app/node_modules # Prevent overwriting node_modules in the container
+    environment:
+      NODE_ENV: production

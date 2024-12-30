@@ -1,0 +1,82 @@
+.cnt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  background-color: #f7faff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.textareaContainer {
+  display: flex;
+  width: 100%;
+  max-width: 80rem; /* Allows a very wide textarea */
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.textarea {
+  flex: 1;
+  width: 100%;
+  min-height: 20rem; /* Slightly taller for better usability */
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  font-family: "Roboto Mono", monospace;
+  line-height: 1.6;
+  resize: vertical;
+  border-radius: 0.5rem;
+  outline: none;
+  color: #333;
+  background-color: #f9f9f9;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.textarea:focus {
+  background-color: #ffffff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.6);
+  border-color: #007bff;
+}
+
+.errors {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 80rem; /* Matches the textarea width */
+  padding: 1rem;
+  background-color: #ffe6e6;
+  color: #d32f2f;
+  border: 1px solid #f5c6cb;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.errors ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.errors .error {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.info {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+  width: 100%;
+  max-width: 80rem;
+  background-color: #f0f4ff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  line-height: 1.5;
+}

@@ -1,0 +1,107 @@
+.cnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.flashCardsCnt {
+  width: 40rem;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #1b8b66;
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  perspective: 1200px; /* Enables 3D effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  font-size: 1rem;
+  font-family: "Playfair Display", serif;
+}
+
+.swap {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: #db9d15;
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.swap:hover {
+  background-color: #eab73c;
+  transform: scale(1.1); /* Adds hover scaling */
+}
+
+.flashCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* Enables 3D rotation */
+  transition: transform 0.6s ease-in-out;
+  transform-origin: center; /* Keeps the card centered */
+}
+
+.flashCard .front,
+.flashCard .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Ensures only one side is visible at a time */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 1.5rem;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 2rem;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+}
+
+.flashCard .front {
+  background: linear-gradient(135deg, #25926e, #1fa775);
+}
+
+.flashCard .back {
+  background: linear-gradient(135deg, #db9d15, #ffc107);
+  transform: rotateY(180deg); /* Flips the back side */
+}
+
+.flashCard.flipped {
+  transform: rotateY(180deg); /* Flips the entire card */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flashCardsCnt {
+    width: 90%;
+    height: auto;
+    aspect-ratio: 1.6; /* Ensures consistent aspect ratio */
+  }
+
+  .swap {
+    font-size: 1.2rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .flashCard .front,
+  .flashCard .back {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+}
